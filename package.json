@@ -1,0 +1,252 @@
+{
+	"name": "artinpixel-react-native-folder-component",
+	"displayName": "Artinpixel React Native Folder Component",
+	"description": "A wizard for new components in the React Native folder",
+	"publisher": "artinpixel",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/artinpixel-me/react-native-folder-component"
+	},
+	"version": "1.0.0",
+	"icon": "resources/icon-reactnative.png",
+	"engines": {
+		"vscode": "^1.39.0"
+	},
+	"categories": [
+		"Other",
+		"Snippets"
+	],
+	"keywords": [
+		"react",
+		"react native",
+		"component",
+		"snippet",
+		"boilerplate",
+		"typescript",
+		"javascript",
+		"folder-component",
+		"artinpixel react"
+	],
+	"galleryBanner": {
+		"color": "#1a202d",
+		"theme": "dark"
+	},
+	"activationEvents": [
+		"onCommand:extension.createReactNativeComponent",
+		"onCommand:extension.createReactNativeComponentStyles"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.createReactNativeComponent",
+				"title": "Artinpixel - Criar Componente React Native"
+			},
+			{
+				"command": "extension.createReactNativeComponentStyles",
+				"title": "Artinpixel - Criar Componente React Native (Com Styles)"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "extension.createReactNativeComponent",
+					"group": "7_modification"
+				},
+				{
+					"command": "extension.createReactNativeComponentStyles",
+					"group": "7_modification"
+				}
+			]
+		},
+		"configuration": {
+			"title": "Artinpixel React Native Folder Component",
+			"properties": {
+				"createreactfoldercomponent.templateLanguage": {
+					"scope": "resource",
+					"title": "Tipo de Linguagem",
+					"description": "Linguagem a ser usada ao criar Componentes",
+					"type": "string",
+					"default": "Perguntar",
+					"enum": [
+						"JavaScript",
+						"TypeScript",
+						"Perguntar"
+					]
+				},
+				"createreactfoldercomponent.javaScriptComponentTemplate": {
+					"scope": "resource",
+					"title": "Modelo de arquivo do componente JavaScript",
+					"type": "array",
+					"description": "Modelo usado para criar o Component em JavaScript",
+					"default": [
+						"import React from 'react';",
+						"import { View } from 'react-native';",
+						"",
+						"export default function $COMPONENT_NAME({}) {",
+						"",
+						"  return (",
+						"    <View>My $COMPONENT_NAME Component!</View>",
+						"  );",
+						"};"
+					]
+				},
+				"createreactfoldercomponent.javaScriptStyledComponentTemplate": {
+					"scope": "resource",
+					"title": "Modelo de arquivo do componente JavaScript com Styles",
+					"type": "array",
+					"description": "Modelo usado para criar o Component em JavaScript e Styles",
+					"default": [
+						"import React from 'react';",
+						"import { View } from 'react-native';",
+						"import styles from './styles';",
+						"",
+						"export default function $COMPONENT_NAME({}) {",
+						"",
+						"  return (",
+						"    <View style={styles().container}>My $COMPONENT_NAME Component!</View>",
+						"  );",
+						"};"
+					]
+				},
+				"createreactfoldercomponent.javaScriptIndexTemplate": {
+					"scope": "resource",
+					"title": "Modelo do arquivo ( index ) do componente JavaScript",
+					"type": "array",
+					"description": "Modelo usado para criar o arquivo (index) do componente JavaScript",
+					"default": [
+						"export { default } from './$COMPONENT_NAME';"
+					]
+				},
+				"createreactfoldercomponent.javaScriptStyleTemplate": {
+					"scope": "resource",
+					"title": "Modelo do arquivo de estilo do componente JavaScript",
+					"type": "array",
+					"description": "Modelo usado para criar o arquivo de estilo do componente JavaScript",
+					"default": [
+						"import { StyleSheet } from 'react-native';",
+						"",
+						"export default function styles({width}) {",
+						"",
+						"  return StyleSheet.create({",
+						"    container: {",
+						"      width: width || 300",
+						"    }",
+						"  });",
+						"};"
+					]
+				},
+				"createreactfoldercomponent.javaScriptStyleFileNameTemplate": {
+					"scope": "resource",
+					"title": "Modelo do Nome de arquivo do estilo para componente em JavaScript",
+					"type": "string",
+					"description": "Defina o Nome do arquivo do estilo para os componente em JavaScript",
+					"default": "styles.js"
+				},
+				"createreactfoldercomponent.typeScriptComponentTemplate": {
+					"scope": "resource",
+					"title": "Modelo de arquivo do componente TypeScript",
+					"type": "array",
+					"description": "Modelo usado para criar o Componente em TypeScript",
+					"default": [
+						"import React from 'react';",
+						"import { View } from 'react-native';",
+						"",
+						"interface $COMPONENT_NAMEProps {",
+						"};",
+						"",
+						"export default function $COMPONENT_NAME({}: $COMPONENT_NAMEProps) {",
+						"",
+						"  return (",
+						"    <View>My $COMPONENT_NAME Component!</View>",
+						"  );",
+						"};"
+					]
+				},
+				"createreactfoldercomponent.typeScriptStyledComponentTemplate": {
+					"scope": "resource",
+					"title": "Modelo de arquivo do componente TypeScript com Styles",
+					"type": "array",
+					"description": "Modelo usado para criar o Componente em TypeScript e Styles",
+					"default": [
+						"import React from 'react';",
+						"import { View } from 'react-native';",
+						"import styles from './styles';",
+						"",
+						"interface $COMPONENT_NAMEProps {",
+						"};",
+						"",
+						"export default function $COMPONENT_NAME({}: $COMPONENT_NAMEProps) {",
+						"",
+						"  return (",
+						"    <View style={styles().container}>My $COMPONENT_NAME Component!</View>",
+						"  );",
+						"};"
+					]
+				},
+				"createreactfoldercomponent.typeScriptIndexTemplate": {
+					"scope": "resource",
+					"title": "Modelo do arquivo ( index ) do componente TypeScript",
+					"type": "array",
+					"description": "Modelo usado para criar o arquivo (index) do componente TypeScript",
+					"default": [
+						"export { default } from './$COMPONENT_NAME';"
+					]
+				},
+				"createreactfoldercomponent.typeScriptStyleTemplate": {
+					"scope": "resource",
+					"title": "Modelo do arquivo de estilo do componente TypeScript",
+					"type": "array",
+					"description": "Modelo usado para criar o arquivo de estilo do componente TypeScript",
+					"default": [
+						"import { StyleSheet } from 'react-native';",
+						"",
+						"interface $COMPONENT_NAMEStylesProps {",
+						"  width?: number | string;",
+						"};",
+						"",
+						"export default function styles(props?: $COMPONENT_NAMEStylesProps) {",
+						"  const { width } = props;",
+						"",
+						"  return StyleSheet.create({",
+						"    container: {",
+						"      width: width || 300",
+						"    }",
+						"  });",
+						"};"
+					]
+				},
+				"createreactfoldercomponent.typeScriptStyleFileNameTemplate": {
+					"scope": "resource",
+					"title": "Modelo do Nome de arquivo do estilo para componente em TypeScript",
+					"type": "string",
+					"description": "Defina o Nome do arquivo do estilo para os componente em TypeScript",
+					"default": "styles.tsx"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile",
+		"test": "node ./out/test/runTest.js",
+		"mocha": "mocha"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^5.2.6",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.39.0",
+		"glob": "^7.1.4",
+		"mocha": "^6.1.4",
+		"ts-node": "^8.4.1",
+		"tslint": "^5.12.1",
+		"typescript": "^3.3.1",
+		"vscode-test": "^1.2.0"
+	},
+	"dependencies": {
+		"minimatch": "^3.0.4"
+	}
+}
