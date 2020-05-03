@@ -1,10 +1,10 @@
-# Artinpixel React JS Folder Component
+# Artinpixel React Native Folder Component
 
 Extenção para criação de componentes React JS.
 
 ## Features
 
-Cria a estrutura de pasta com os arquivos do componentes React JS.
+Cria a estrutura de pasta com os arquivos do componentes React Native.
 
 > Dica: Possibilidade de escolher a linguagem: TypeScript ou Javacript.
 
@@ -12,11 +12,11 @@ Cria a estrutura de pasta com os arquivos do componentes React JS.
 
 Utilize o menu de contexto para escolher entre: 
 
-`Artinpixel - Criar Componente React JS`
+`Artinpixel - Criar Componente React Native`
 
 ou
 
-`Artinpixel - Criar Componente React JS (Com Styles)`
+`Artinpixel - Criar Componente React Native (Com Styles)`
 
 O mesmo pode ser executado pelo `command palette` [command+shift+p] no Mac ou [ctrl+shif+p] no Windows/Linux.
 
