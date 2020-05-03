@@ -1,6 +1,6 @@
 # Artinpixel React Native Folder Component
 
-Extenção para criação de componentes React JS.
+Extenção para criação de componentes React Native.
 
 ## Features
 
